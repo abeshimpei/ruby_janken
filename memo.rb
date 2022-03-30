@@ -10,13 +10,13 @@ if memo_type == 1
       
   puts "拡張子を除いたファイルを入力してください。"
   
-  title_name = gets.chomp.to_s
+  title_name = gets.to_s.chomp
   
   puts "メモしたい内容を記入して下さい"
   puts "完了したらCtrl + Dを押します"
   
-  memo = STDIN.readline.chomp.to_s
-  
+   memo = STDIN.readlines.chomp.to_s
+    
      CSV.open("#{title_name}.csv","w") do |csv|
      csv << [memo]
 
