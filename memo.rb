@@ -15,10 +15,10 @@ if memo_type == 1
   puts "メモしたい内容を記入して下さい"
   puts "完了したらCtrl + Dを押します"
   
-   memo = STDIN.readlines.to_s
+   memo = STDIN.readlines
     
      CSV.open("#{title_name}.csv","w") do |csv|
-     csv << [memo]
+     csv << memo
 
       end
 end
@@ -32,10 +32,10 @@ if memo_type == 2
   puts "編集したい内容を記入して下さい"
   puts "完了したらCtrl + Dを押します"
   
-    memo = STDIN.readlines.to_s
+    memo = STDIN.readlines
   
      CSV.open("#{title_name}.csv","a") do |csv|
-     csv << [memo]
+     csv << memo
 
       end
 end
